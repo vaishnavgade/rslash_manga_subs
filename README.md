@@ -6,3 +6,8 @@ A python script that retrieves all the posts from r/manga based on a .txt file w
 2. Activate the venv using ```source <path to env/bin/activate>```
 3. Run ```pip install -r requirements.txt```
 4. Start the script using ```python3 <filename.py>```
+
+
+### TODO
+1. Match Manga/Manhwa from a file instead of hardcoding
+2. Work with github workflows
