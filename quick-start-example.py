@@ -30,14 +30,13 @@ headers = {
 
 # print("Requesting access_token from Reddit");
 # response = requests.post("https://www.reddit.com/api/v1/access_token", auth=client_auth, data=post_data, headers=headers)
-# responseJson = response.json()
-# print(f"Response from access_token: {responseJson}")
+# print(f"Response from access_token: {response.json()}")
 
-# if 'access_token' not in responseJson:
+# if 'access_token' not in response.json():
 #     raise ValueError("No access_token in response")
 
 # headers = {
-#     "Authorization": f"bearer {responseJson['access_token']}",
+#     "Authorization": f"bearer {response.json()['access_token']}",
 #     "User-Agent": f"rslash_manga_subs/0.1 by /u/{config.REDDIT_USERNAME}"
 # }
 
@@ -53,6 +52,9 @@ print("Requesting identity information from Reddit")
 # %3A => : (symbol)
 # restrict_sr=1 => true (boolean) Limit my search to Subreddit
 response = requests.get("https://oauth.reddit.com/r/manga/search/?q=title%3A[DISC] Fire Force&restrict_sr=1&sr_nsfw=&include_over_18=1&t=all&sort=new", headers=headers)
+
+if 'data' not in response.json():
+    raise ValueError("No data in response")
 
 # Might have to keep this updated based on r/manga
 chapterVariations = ['Ch', 'Chapter']

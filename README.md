@@ -9,5 +9,7 @@ A python script that retrieves all the posts from r/manga based on a .txt file w
 
 
 ### TODO
-1. Match Manga/Manhwa from a file instead of hardcoding
-2. Work with github workflows
+. Add exception handling
+. Write unit tests
+. Match Manga/Manhwa from a file instead of hardcoding
+. Work with github workflows
