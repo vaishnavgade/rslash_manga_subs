@@ -6,7 +6,7 @@ A python script that retrieves all the posts from r/manga based on a .txt file w
 2. Activate the venv using ```source <path to env/bin/activate>```
 3. Run ```pip install -r requirements.txt```
 4. Start the script using ```python3 <filename.py>```
-
+5. To Deactivate venv ```deactivate```
 
 ### TODO
 - Add exception handling
