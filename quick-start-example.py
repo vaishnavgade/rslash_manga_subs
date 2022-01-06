@@ -28,23 +28,23 @@ headers = {
 # string formatting with f-Strings
 # print(f"Headers with User-Agent used: {headers['User-Agent']}")
 
-# print("Requesting access_token from Reddit");
-# response = requests.post("https://www.reddit.com/api/v1/access_token", auth=client_auth, data=post_data, headers=headers)
-# print(f"Response from access_token: {response.json()}")
+print("Requesting access_token from Reddit");
+response = requests.post("https://www.reddit.com/api/v1/access_token", auth=client_auth, data=post_data, headers=headers)
+print(f"Response from access_token: {response.json()}")
 
-# if 'access_token' not in response.json():
-#     raise ValueError("No access_token in response")
+if 'access_token' not in response.json():
+    raise ValueError("No access_token in response")
 
-# headers = {
-#     "Authorization": f"bearer {response.json()['access_token']}",
-#     "User-Agent": f"rslash_manga_subs/0.1 by /u/{config.REDDIT_USERNAME}"
-# }
-
-# comment out above code once you get your token and start testing your code
 headers = {
-    "Authorization": f"bearer {config.REDDIT_ACCESS_TOKEN}",
+    "Authorization": f"bearer {response.json()['access_token']}",
     "User-Agent": f"rslash_manga_subs/0.1 by /u/{config.REDDIT_USERNAME}"
 }
+
+# # comment out above code once you get your token and start testing your code
+# headers = {
+#     "Authorization": f"bearer {config.REDDIT_ACCESS_TOKEN}",
+#     "User-Agent": f"rslash_manga_subs/0.1 by /u/{config.REDDIT_USERNAME}"
+# }
 
 print("Requesting identity information from Reddit")
 # response = requests.get("https://oauth.reddit.com/api/v1/me/karma", headers=headers)
