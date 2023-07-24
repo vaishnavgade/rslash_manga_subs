@@ -13,3 +13,7 @@ A python script that retrieves all the posts from r/manga based on a .txt file w
 - Write unit tests
 - Match Manga/Manhwa from a file instead of hardcoding
 - Work with github workflows
+- Add and Remove RSS Feeds
+- Add and Remove filters that applies to all RSS Feeds added
+- Send push notifications of updates
+- Run poll in the background to get updates - check if this can be a schedules tasks
